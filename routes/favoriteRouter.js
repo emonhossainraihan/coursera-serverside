@@ -15,7 +15,7 @@ favoriteRouter
   })
 
   .get(cors.cors, authenticate.verifyUser, (req, res, next) => {
-    Favorites.find({})
+    Favorites.findOne()
       .populate('user')
       .populate('dishes')
       .then(
